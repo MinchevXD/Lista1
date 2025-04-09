@@ -3,6 +3,6 @@ package main
 import "fmt"
 
 func main() {
-	var x int
+	var x float64
 	fmt.Scan(&x)
 	fmt.Printf("%f pratos de trigo pra %f tigres tristes", x, x)

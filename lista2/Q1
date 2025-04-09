@@ -3,6 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	var x float64
-	fmt.Scan(&x)
-	fmt.Printf("%f pratos de trigo pra %f tigres tristes", x, x)}
+	var x int
+	fmt.Scan(&x) // Lê o valor inserido pelo usuário
+	fmt.Printf("%d pratos de trigo pra %d tigres tristes", x, x) // Exibe a mensagem formatada
+}

@@ -4,6 +4,6 @@ import "fmt"
 
 func main() {
 	var x int
-	fmt.Scan(&x) // Lê o valor inserido pelo usuário
-	fmt.Printf("%d pratos de trigo pra %d tigres tristes", x, x) // Exibe a mensagem formatada
+	fmt.Scan(&x) 
+	fmt.Printf("%d pratos de trigo pra %d tigres tristes", x, x) 
 }

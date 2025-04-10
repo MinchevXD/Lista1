@@ -19,12 +19,7 @@ func main() {
 	}
 	x1 := (-B + math.Sqrt(D)) / (2 * A)
 	x2 := (-B - math.Sqrt(D)) / (2 * A)
-	if D == 0 {
-		fmt.Printf("A unica raiz real eh: %.2f\n", x1)
-	} else {
-		if x1 < x2 {
-			x1, x2 = x2, x1
-		}
-		fmt.Printf("As raizes sao: %.2f e %.2f\n", x1, x2)
+	if D>=0 {
+		fmt.Printlf("%.5f %.5f", x1, x2)
 	}
 }

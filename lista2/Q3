@@ -1,0 +1,22 @@
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+func main() {
+	var a, b, c, d, x, y float64
+
+	fmt.Scan(&a, &b, &c)
+	d = (b * b) - (4 * a * c)
+	if a == 0 {
+		fmt.Println("Nao e equacao do segundo grau")
+	} else if d >= 0 {
+		x = (-b + math.Sqrt(d)) / (2 * a)
+		y = (-b - math.Sqrt(d)) / (2 * a)
+		fmt.Printf("%.5f %.5f", x, y)
+	} else {
+		fmt.Println("Nao ha raizes reais")
+	}
+}

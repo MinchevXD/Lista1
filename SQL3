@@ -1,0 +1,22 @@
+-- Q4: Inserir 4 professores
+INSERT INTO professor (nome, formacao, ativo, cpf) VALUES
+('Carlos', 'Matemática', TRUE, '111.111.111-11'),
+('Ana', 'História', TRUE, '222.222.222-22'),
+('Bruno', 'Física', FALSE, '333.333.333-33'),
+('Lia', 'Química', TRUE, '444.444.444-44');
+
+-- Q5: Atualizar nome de um professor
+UPDATE professor
+SET nome = 'Ana Paula'
+WHERE nome = 'Ana';
+
+-- Q6: Inserir 4 matérias (associando com os id's dos professores já inseridos)
+INSERT INTO materia (nome, idProfessor) VALUES
+('Matemática Básica', 1),
+('História Geral', 2),
+('Física Moderna', 3),
+('Química Orgânica', 4);
+
+-- Q7: Deletar uma das matérias
+DELETE FROM materia
+WHERE nome = 'Física Moderna';

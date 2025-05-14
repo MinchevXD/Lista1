@@ -1,0 +1,20 @@
+-- Criação do banco de dados
+CREATE DATABASE Escola;
+\c Escola  -- Conectar-se ao banco criado (caso use o psql, senão ignore)
+
+-- Criação da tabela professor
+CREATE TABLE professor (
+    idProfessor SERIAL PRIMARY KEY,
+    nome VARCHAR(10) NOT NULL,
+    formacao VARCHAR(50) NOT NULL,
+    ativo BOOLEAN NOT NULL
+);
+
+-- Criação da tabela materia
+CREATE TABLE materia (
+    idMateria SERIAL PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    cargaHoraria TIME NOT NULL,
+    idProfessor INTEGER NOT NULL,
+    FOREIGN KEY (idProfessor) REFERENCES professor(idProfessor)
+);

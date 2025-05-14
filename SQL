@@ -1,0 +1,59 @@
+-- Criação do banco de dados
+CREATE DATABASE Escola;
+\c Escola
+
+-- Criação da tabela professor
+CREATE TABLE professor (
+    idProfessor SERIAL PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    formacao VARCHAR(50) NOT NULL,
+    ativo BOOLEAN NOT NULL
+);
+
+-- Criação da tabela materia
+CREATE TABLE materia (
+    idMateria SERIAL PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    idProfessor INTEGER NOT NULL,
+    FOREIGN KEY (idProfessor) REFERENCES professor(idProfessor)
+);
+
+-- Adicionar a coluna CPF com restrição de unicidade
+ALTER TABLE professor
+ADD COLUMN cpf VARCHAR(14) UNIQUE;
+
+-- Inserção dos professores
+INSERT INTO professor (nome, formacao, ativo, cpf) VALUES
+('Guisoli', 'Física', TRUE, '111.111.111-11'),
+('Fernando', 'Programação', TRUE, '222.222.222-22'),
+('Áquiles', 'Sinuca I', FALSE, '333.333.333-33'),
+('Adrian', 'Sinuca II', TRUE, '444.444.444-44');
+
+-- Atualizar nome de "Guisoli" para "Felipe Guisoli"
+UPDATE professor
+SET nome = 'Felipe Guisoli'
+WHERE nome = 'Guisoli';
+
+-- Inserção das matérias
+INSERT INTO materia (nome, idProfessor) VALUES
+('Física Clássica', 1),
+('Lógica de Programação', 2),
+('Técnicas de Sinuca I', 3),
+('Técnicas de Sinuca II', 4);
+
+-- Remoção de uma matéria (exemplo: remover "Técnicas de Sinuca I")
+DELETE FROM materia
+WHERE nome = 'Técnicas de Sinuca I';
+
+-- Consulta de professores ativos
+SELECT * FROM professor
+WHERE ativo = TRUE;
+
+-- Consulta das matérias do professor Felipe Guisoli (id 1)
+SELECT * FROM materia
+WHERE idProfessor = 1
+ORDER BY nome;
+
+-- Mostrar todos os dados das tabelas
+SELECT * FROM professor;
+SELECT * FROM materia;

@@ -1,0 +1,12 @@
+-- Q8: Selecionar professores ativos
+SELECT * FROM professor
+WHERE ativo = TRUE;
+
+-- Q9: Selecionar matérias de um professor específico e ordenar por nome
+SELECT * FROM materia
+WHERE idProfessor = 1
+ORDER BY nome;
+
+-- Q10: Mostrar todas as informações das tabelas
+SELECT * FROM professor;
+SELECT * FROM materia;

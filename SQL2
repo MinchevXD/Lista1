@@ -1,0 +1,11 @@
+-- Q1: Adicionar coluna CPF com restrição UNIQUE
+ALTER TABLE professor
+ADD COLUMN cpf VARCHAR(14) UNIQUE;
+
+-- Q2: Modificar o tamanho do campo nome
+ALTER TABLE professor
+ALTER COLUMN nome TYPE VARCHAR(100);
+
+-- Q3: Remover a coluna cargaHoraria
+ALTER TABLE materia
+DROP COLUMN cargaHoraria;
